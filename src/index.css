@@ -1,0 +1,215 @@
+/* RESET */
+*,*::before,*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --bg:#04040a;
+  --bg2:#070710;
+  --cyan:#00d4ff;
+  --purple:#7c3aed;
+  --pink:#ec4899;
+  --text:#e2e8f0;
+  --muted:#64748b;
+  --card-bg:rgba(255,255,255,0.03);
+  --card-border:rgba(255,255,255,0.08);
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Outfit',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:2rem;
+  padding:10px 30px;
+  border-radius:100px;
+  backdrop-filter:blur(20px);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  z-index:100;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:rgba(255,255,255,0.6);
+  text-decoration:none;
+  font-size:0.85rem;
+}
+
+.nav-links a:hover{
+  color:white;
+}
+
+/* HERO */
+#hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:6rem 2rem;
+}
+
+.hero-title{
+  font-size:5rem;
+  font-weight:800;
+}
+
+.hero-title .grad{
+  background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-sub{
+  margin-top:1rem;
+  color:rgba(255,255,255,0.6);
+}
+
+/* BUTTON */
+.btn-primary{
+  margin-top:2rem;
+  padding:12px 30px;
+  border-radius:100px;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  color:white;
+  text-decoration:none;
+}
+
+/* SECTION */
+section{
+  padding:6rem 4rem;
+}
+
+/* ABOUT */
+#about{
+  background:var(--bg2);
+}
+
+.about-wrap{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:3rem;
+}
+
+.profile-card{
+  padding:2rem;
+  border-radius:20px;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+}
+
+/* SKILLS */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.skill-card{
+  padding:20px;
+  border-radius:20px;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  transition:0.3s;
+}
+
+.skill-card:hover{
+  transform:translateY(-5px);
+}
+
+/* 🔥 FIX YANG KAMU BELUM ADA */
+.card7{
+  --grad-a:#22c55e;
+  --grad-b:#06b6d4;
+}
+
+.card8{
+  --grad-a:#f43f5e;
+  --grad-b:#8b5cf6;
+}
+
+.ic7{
+  background:rgba(34,197,94,0.2);
+}
+
+.ic8{
+  background:rgba(244,63,94,0.2);
+}
+
+/* PORTFOLIO */
+.proj-list{
+  margin-top:3rem;
+}
+
+.proj-row{
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  cursor:pointer;
+}
+
+.proj-row:hover{
+  background:rgba(255,255,255,0.03);
+}
+
+/* CATEGORY FIX */
+.cat-game{
+  background:rgba(34,197,94,0.15);
+  color:#86efac;
+}
+
+.cat-ui{
+  background:rgba(244,63,94,0.15);
+  color:#fda4af;
+}
+
+/* CONTACT */
+.contact-inner{
+  padding:3rem;
+  border-radius:20px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:2rem;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .about-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-title{
+    font-size:3rem;
+  }
+}
