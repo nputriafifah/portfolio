@@ -10,15 +10,16 @@ const ME = {
   initials: "NPA",
   major: "D3 Teknik Informatika",
   university: "Universitas Sebelas Maret",
-  semester: "Semester 4",
   ipk: "3.77",
   location: "Surakarta, ID",
   email: "nputriafifah17@gmail.com",
   github: "https://github.com/npafifah",
   linkedin: "https://www.linkedin.com/in/nurputriafifah",
   instagram: "https://instagram.com/fifhptrii",
-  about1: "Saya Afifah, mahasiswa D3 Teknik Informatika semester 4 di Universitas Sebelas Maret yang gemar membangun produk digital dari nol. Bagi saya, kode adalah medium untuk memecahkan masalah nyata.",
-  about2: "Aktif mengerjakan proyek kampus, lomba, dan bootcamp. Saya percaya developer terbaik adalah yang juga memahami desain, produk, dan manusia.",
+
+  about1: "Frontend Developer yang fokus membangun produk digital dari nol dengan pendekatan user-centered. Saya melihat kode sebagai alat untuk menyelesaikan masalah nyata.",
+
+  about2: "Berpengalaman mengerjakan proyek web, lomba, dan bootcamp. Memiliki minat pada pengembangan UI/UX serta membangun aplikasi yang modern, responsif, dan impactful.",
 };
 
 const SKILLS = [
@@ -385,7 +386,7 @@ function About() {
             <div style={{ fontSize: "1.25rem", fontWeight: 700, color: "#fff", marginBottom: 4 }}>{ME.name}</div>
             <div style={{ fontSize: "0.8rem", color: "#64748b" }}>{ME.major}</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "rgba(255,255,255,0.05)", marginTop: "1.5rem", borderRadius: 12, overflow: "hidden" }}>
-              {[["UNS", "Universitas"], ["Sem 4", "Semester"], [ME.ipk, "IPK"], ["Surakarta", "Lokasi"]].map(([v, l]) => (
+              {[["UNS", "Universitas"], ["Fokus", "Frontend Development"], [ME.ipk, "IPK"], ["Surakarta", "Lokasi"]].map(([v, l]) => (
                 <div key={l} style={{ background: "rgba(0,0,0,0.2)", padding: "1rem", textAlign: "center" }}>
                   <div style={{ fontSize: "1.1rem", fontWeight: 700, color: "#fff" }}>{v}</div>
                   <div style={{ fontSize: "0.7rem", color: "#64748b", marginTop: 2 }}>{l}</div>
@@ -408,7 +409,7 @@ function About() {
           <p style={{ fontSize: "1rem", lineHeight: 1.9, color: "rgba(226,232,240,0.55)", marginBottom: "1.25rem" }}>{ME.about1}</p>
           <p style={{ fontSize: "1rem", lineHeight: 1.9, color: "rgba(226,232,240,0.55)" }}>{ME.about2}</p>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginTop: "2rem" }}>
-            {[["Universitas", ME.university], ["Jurusan", ME.major], ["Semester", "4 — Aktif"], ["Lokasi", ME.location]].map(([l, v]) => (
+            {[["Universitas", ME.university], ["Jurusan", ME.major], ["Fokus", "Frontend Development"], ["Lokasi", ME.location]].map(([l, v]) => (
               <div key={l} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "1rem 1.25rem" }}>
                 <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#64748b", marginBottom: 4 }}>{l}</div>
                 <div style={{ fontSize: "0.9rem", fontWeight: 600, color: "#fff" }}>{v}</div>
