@@ -52,7 +52,7 @@ const PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript"],
     category: "Web Design",
     type: "Lomba",
-    image: "/public/batik.png",
+    image: "/batik.png",
     link: "https://...", // isi kalau ada
   },
   {
@@ -77,7 +77,7 @@ const PROJECTS = [
     tech: ["Figma"],
     category: "UI/UX",
     type: "Case Study",
-    image: "/public/tiki.png",
+    image: "/tiki.png",
     link: "https://...", // link figma kalau ada
   },
   {
@@ -89,7 +89,7 @@ const PROJECTS = [
     tech: ["Unity", "C#"],
     category: "Game",
     type: "Personal",
-    image: "/public/game2.png",
+    image: "/game2.png",
   },
   {
     num: "6",
