@@ -11,15 +11,17 @@ const ME = {
   major: "D3 Teknik Informatika",
   university: "Universitas Sebelas Maret",
   ipk: "3.77",
-  location: "Surakarta, ID",
+  location: "Sukoharjo, Indonesia",
+  phone: "+62 831 6098 2717",
   email: "nputriafifah17@gmail.com",
-  github: "https://github.com/npafifah",
+  github: "https://github.com/nafifah",
   linkedin: "https://www.linkedin.com/in/nurputriafifah",
   instagram: "https://instagram.com/fifhptrii",
+  portfolio: "https://portfolio-np-afifah.netlify.app/",
 
-  about1: "Frontend Developer yang fokus membangun produk digital dari nol dengan pendekatan user-centered. Saya melihat kode sebagai alat untuk menyelesaikan masalah nyata.",
+  about1: "Mahasiswa Diploma Teknik Informatika di Universitas Sebelas Maret dengan minat kuat pada pengembangan Frontend dan Mobile Application. Berpengalaman membangun aplikasi responsif menggunakan React.js dan Flutter.",
 
-  about2: "Berpengalaman mengerjakan proyek web, lomba, dan bootcamp. Memiliki minat pada pengembangan UI/UX serta membangun aplikasi yang modern, responsif, dan impactful.",
+  about2: "Terbiasa mengintegrasikan RESTful API, merancang antarmuka intuitif, dan berkolaborasi dalam tim. Passionate untuk terus belajar dan membangun solusi digital yang berdampak.",
 };
 
 const SKILLS = [
@@ -46,6 +48,29 @@ const PROJECTS = [
   },
   {
     num: "02",
+    title: "StrawFuel — Renewable Energy Platform",
+    role: "Frontend Developer",
+    desc: "Platform inovatif untuk edukasi, perhitungan, dan visualisasi potensi bioetanol & biomassa dari limbah jerami padi Indonesia.",
+    impact: "Membantu monitoring dan edukasi energi terbarukan berbasis limbah pertanian melalui dashboard interaktif.",
+    tech: ["React.js", "Tailwind CSS"],
+    category: "Web App",
+    type: "PBL Project",
+    highlight: true,
+    image: "/strawfuel.png",
+  },
+  {
+    num: "03",
+    title: "VolunTrack — Volunteer Management App",
+    role: "UI/UX Designer",
+    desc: "Merancang wireframe dan prototipe UI high-fidelity untuk aplikasi manajemen relawan dengan prinsip user-centered design.",
+    impact: "Memudahkan penyelenggara dan relawan mengelola kegiatan sosial, sertifikat, dan passport kontribusi.",
+    tech: ["Figma", "Prototyping", "UI/UX"],
+    category: "UI/UX",
+    type: "PBL Project",
+    image: "/voluntrack.png",
+  },
+  {
+    num: "04",
     title: "Evercloth — Website UMKM Batik",
     role: "Frontend Developer",
     desc: "Membangun website e-commerce sederhana untuk membantu UMKM batik memperluas jangkauan pasar digital.",
@@ -54,10 +79,9 @@ const PROJECTS = [
     category: "Web Design",
     type: "Lomba",
     image: "/batik.png",
-    link: "https://...", // isi kalau ada
   },
   {
-    num: "03",
+    num: "05",
     title: "SIKOMA — Website Kesehatan Mental",
     role: "Frontend Developer",
     desc: "Mengembangkan platform self-help dan edukasi kesehatan mental untuk meningkatkan awareness di kalangan mahasiswa.",
@@ -66,11 +90,9 @@ const PROJECTS = [
     category: "Web App",
     type: "Lomba",
     image: "/sikoma.png",
-    link: "https://...", // opsional
   },
-  
   {
-    num: "04",
+    num: "06",
     title: "TIKI Ongkir Flow Redesign",
     role: "UI/UX Designer",
     desc: "Melakukan redesign UX flow untuk meningkatkan kemudahan pengguna dalam melakukan pengecekan ongkir.",
@@ -79,10 +101,9 @@ const PROJECTS = [
     category: "UI/UX",
     type: "Case Study",
     image: "/tiki.png",
-    link: "https://...", // link figma kalau ada
   },
   {
-    num: "05",
+    num: "07",
     title: "Mountain Adventure",
     role: "Game Developer",
     desc: "Membuat game petualangan berbasis Unity dengan mekanik eksplorasi.",
@@ -93,7 +114,7 @@ const PROJECTS = [
     image: "/game2.png",
   },
   {
-    num: "6",
+    num: "08",
     title: "Creative Poster — Olivia UB Competition",
     role: "Designer",
     desc: "Membuat desain poster kreatif untuk kompetisi nasional dengan pendekatan visual storytelling.",
@@ -102,11 +123,21 @@ const PROJECTS = [
     category: "Design",
     type: "Competition",
     image: "/greenspire.png",
-    link: "https://...", // link drive poster kamu
   },
 ];
 
 const EXPERIENCES = [
+  {
+    title: "Frontend Developer & UI/UX Designer",
+    org: "Hummalabs × Universitas Sebelas Maret",
+    year: "2026",
+    desc: [
+      "Merancang user flow, wireframe, dan UI high-fidelity di Figma",
+      "Mengembangkan antarmuka web responsif menggunakan React.js",
+      "Mengintegrasikan frontend dengan RESTful API",
+      "Berkolaborasi dengan tim backend menggunakan Git dan GitHub",
+    ],
+  },
   {
     title: "Kepala Divisi Personalia",
     org: "Emailkomp UNS",
@@ -287,32 +318,73 @@ function Cursor() {
 
   return (
     <>
-      <div ref={dotRef} style={{ position: "fixed", width: 8, height: 8, background: "#00d4ff", borderRadius: "50%", pointerEvents: "none", zIndex: 9999, transform: "translate(-50%,-50%)", transition: "transform 0.1s, background 0.3s", boxShadow: "0 0 10px #00d4ff, 0 0 20px rgba(0,212,255,0.5)" }} />
-      <div ref={ringRef} style={{ position: "fixed", width: 40, height: 40, border: "1px solid rgba(0,212,255,0.3)", borderRadius: "50%", pointerEvents: "none", zIndex: 9998, transform: "translate(-50%,-50%)", transition: "width 0.3s, height 0.3s, border-color 0.3s" }} />
+      <div ref={dotRef} className="custom-cursor-dot" />
+      <div ref={ringRef} className="custom-cursor-ring" />
     </>
   );
 }
 
 // ─── NAV ─────────────────────────────────────────────────────────────────────
+const NAV_LINKS = [
+  ["about", "Tentang"],
+  ["skills", "Keahlian"],
+  ["experience", "Pengalaman"],
+  ["portfolio", "Proyek"],
+  ["contact", "Kontak"],
+];
+
 function Nav({ active }) {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const close = () => setOpen(false);
+    window.addEventListener("resize", close);
+    return () => window.removeEventListener("resize", close);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  const handleNavClick = () => setOpen(false);
+
   return (
-    <nav style={{ position: "fixed", top: "1.5rem", left: "50%", transform: "translateX(-50%)", zIndex: 500, display: "flex", alignItems: "center", gap: "2rem", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(20px)", padding: "0.75rem 2rem", borderRadius: 100, whiteSpace: "nowrap" }}>
-      <a href="#hero" style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1rem", fontWeight: 700, color: "#fff", textDecoration: "none", letterSpacing: "0.05em" }}>
-        Afifah<span style={{ color: "#00d4ff" }}>.</span>
-      </a>
-      <div style={{ display: "flex", gap: "1.75rem", listStyle: "none" }}>
-        {[
-          ["about", "Tentang"],
-          ["skills", "Keahlian"],
-          ["experience", "Pengalaman"],
-          ["portfolio", "Proyek"],
-          ["contact", "Kontak"]
-        ].map(([id, label]) => (
-          <a key={id} href={`#${id}`} style={{ fontSize: "0.8rem", fontWeight: 500, color: active === id ? "#fff" : "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.2s" }}>{label}</a>
+    <>
+      <nav className="site-nav">
+        <a href="#hero" className="site-nav-logo" onClick={handleNavClick}>
+          Afifah<span style={{ color: "#00d4ff" }}>.</span>
+        </a>
+        <div className="site-nav-links">
+          {NAV_LINKS.map(([id, label]) => (
+            <a key={id} href={`#${id}`} className={active === id ? "active" : ""}>{label}</a>
+          ))}
+        </div>
+        <a href="#contact" className="site-nav-cta">Hire Me</a>
+        <button
+          type="button"
+          className="site-nav-toggle"
+          aria-label={open ? "Tutup menu" : "Buka menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "✕" : "☰"}
+        </button>
+      </nav>
+
+      {open && (
+        <div className="site-nav-overlay" onClick={handleNavClick} aria-hidden="true" />
+      )}
+
+      <div className={`site-nav-mobile${open ? " open" : ""}`}>
+        {NAV_LINKS.map(([id, label]) => (
+          <a key={id} href={`#${id}`} className={active === id ? "active" : ""} onClick={handleNavClick}>
+            {label}
+          </a>
         ))}
+        <a href="#contact" className="site-nav-mobile-cta" onClick={handleNavClick}>Hire Me</a>
       </div>
-      <a href="#contact" style={{ background: "linear-gradient(135deg,#7c3aed,#00d4ff)", padding: "0.5rem 1.25rem", borderRadius: 100, fontSize: "0.8rem", fontWeight: 600, color: "#fff", textDecoration: "none" }}>Hire Me</a>
-    </nav>
+    </>
   );
 }
 
@@ -342,7 +414,7 @@ function Hero() {
   }, [pi]);
 
   return (
-    <section id="hero" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "7rem 2rem 4rem", position: "relative", zIndex: 1, overflow: "hidden" }}>
+    <section id="hero" className="hero-section">
       <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px)", backgroundSize: "60px 60px", WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)", maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent)",  pointerEvents: "none" }} />
       <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,212,255,0.08)", border: "1px solid rgba(0,212,255,0.2)", padding: "6px 18px", borderRadius: 100, fontSize: "0.78rem", fontWeight: 600, color: "#00d4ff", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "2rem" }}>
         <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00d4ff" }} />
@@ -352,7 +424,7 @@ function Hero() {
         Nur Putri <br />
         <span style={{ background: "linear-gradient(135deg,#00d4ff 0%,#7c3aed 50%,#ec4899 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Afifah</span>
       </h1>
-      <div style={{ fontSize: "clamp(1rem,2vw,1.3rem)", fontFamily: "'Space Grotesk', monospace", color: "rgba(226,232,240,0.7)", height: 36, marginBottom: "0.5rem" }}>
+      <div className="hero-typed">
         {typed}<span style={{ borderRight: "2px solid #00d4ff", animation: "blink 1s step-end infinite" }}>&nbsp;</span>
       </div>
       <p style={{ fontSize: "0.85rem", color: "#00d4ff", marginBottom: "1.5rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>Available for Frontend Internship 2026 🚀</p>
@@ -361,7 +433,7 @@ function Hero() {
       </p>
       <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
         <a href="#portfolio" style={{ background: "linear-gradient(135deg,#7c3aed,#00d4ff)", color: "#fff", padding: "0.9rem 2.25rem", borderRadius: 100, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}>View Projects ↓</a>
-        <a href="/CV_NurPutriAfifah.pdf" download style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", color: "#fff", padding: "0.9rem 2.25rem", borderRadius: 100, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}>Download CV</a>
+        <a href="/CV_NurPutriAfifah_MobileDeveloper.pdf" download="CV_NurPutriAfifah.png" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", color: "#fff", padding: "0.9rem 2.25rem", borderRadius: 100, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}>Download CV</a>
       </div>
     </section>
   );
@@ -372,8 +444,8 @@ function About() {
   const [refL, inL] = useInView();
   const [refR, inR] = useInView();
   return (
-    <section id="about" style={{ padding: "7rem 6rem", background: "#070710", position: "relative", zIndex: 1 }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "5rem", alignItems: "center" }}>
+    <section id="about" className="section section-alt">
+      <div className="container about-grid">
         <div ref={refL} style={{ position: "relative", opacity: inL ? 1 : 0, transform: inL ? "none" : "translateX(-40px)", transition: "all 0.75s ease" }}>
           <div style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", backdropFilter: "blur(20px)", borderRadius: 24, padding: "2.5rem", textAlign: "center", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 120, background: "linear-gradient(135deg,rgba(124,58,237,0.3),rgba(0,212,255,0.2))", borderRadius: "24px 24px 0 0" }} />
@@ -386,7 +458,7 @@ function About() {
             <div style={{ fontSize: "1.25rem", fontWeight: 700, color: "#fff", marginBottom: 4 }}>{ME.name}</div>
             <div style={{ fontSize: "0.8rem", color: "#64748b" }}>{ME.major}</div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "rgba(255,255,255,0.05)", marginTop: "1.5rem", borderRadius: 12, overflow: "hidden" }}>
-              {[["UNS", "Universitas"], ["Fokus", "Frontend Development"], [ME.ipk, "IPK"], ["Surakarta", "Lokasi"]].map(([v, l]) => (
+              {[["UNS", "Universitas"], ["Fokus", "Frontend Development"], [ME.ipk, "IPK"], [ME.location.split(",")[0], "Lokasi"]].map(([v, l]) => (
                 <div key={l} style={{ background: "rgba(0,0,0,0.2)", padding: "1rem", textAlign: "center" }}>
                   <div style={{ fontSize: "1.1rem", fontWeight: 700, color: "#fff" }}>{v}</div>
                   <div style={{ fontSize: "0.7rem", color: "#64748b", marginTop: 2 }}>{l}</div>
@@ -394,10 +466,10 @@ function About() {
               ))}
             </div>
           </div>
-          <div style={{ position: "absolute", top: "10%", right: "-10%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "8px 14px", borderRadius: 100, fontSize: "0.72rem", fontWeight: 600, display: "flex", alignItems: "center", gap: 6, color: "#00d4ff", animation: "float 3s ease-in-out infinite" }}>
+          <div style={{ position: "absolute", top: "10%", right: "-10%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "8px 14px", borderRadius: 100, fontSize: "0.72rem", fontWeight: 600, display: "flex", alignItems: "center", gap: 6, color: "#00d4ff", animation: "float 3s ease-in-out infinite" }} className="about-float-badge about-float-badge--top">
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00d4ff", boxShadow: "0 0 8px #00d4ff" }} />Web Developer
           </div>
-          <div style={{ position: "absolute", bottom: "15%", left: "-10%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "8px 14px", borderRadius: 100, fontSize: "0.72rem", fontWeight: 600, display: "flex", alignItems: "center", gap: 6, color: "#ec4899", animation: "float 3s ease-in-out infinite", animationDelay: "1.5s" }}>
+          <div style={{ position: "absolute", bottom: "15%", left: "-10%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", backdropFilter: "blur(10px)", padding: "8px 14px", borderRadius: 100, fontSize: "0.72rem", fontWeight: 600, display: "flex", alignItems: "center", gap: 6, color: "#ec4899", animation: "float 3s ease-in-out infinite", animationDelay: "1.5s" }} className="about-float-badge about-float-badge--bottom">
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#ec4899", boxShadow: "0 0 8px #ec4899" }} />UI/UX Design
           </div>
         </div>
@@ -408,7 +480,7 @@ function About() {
           </h2>
           <p style={{ fontSize: "1rem", lineHeight: 1.9, color: "rgba(226,232,240,0.55)", marginBottom: "1.25rem" }}>{ME.about1}</p>
           <p style={{ fontSize: "1rem", lineHeight: 1.9, color: "rgba(226,232,240,0.55)" }}>{ME.about2}</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginTop: "2rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginTop: "2rem" }} className="info-grid">
             {[["Universitas", ME.university], ["Jurusan", ME.major], ["Fokus", "Frontend Development"], ["Lokasi", ME.location]].map(([l, v]) => (
               <div key={l} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "1rem 1.25rem" }}>
                 <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#64748b", marginBottom: 4 }}>{l}</div>
@@ -427,8 +499,8 @@ function Skills() {
   const [ref, inView] = useInView();
   const [hov, setHov] = useState(null);
   return (
-    <section id="skills" style={{ padding: "7rem 6rem", background: "#04040a", position: "relative", zIndex: 1 }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    <section id="skills" className="section">
+      <div className="container">
         <div ref={ref} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3.5rem", opacity: inView ? 1 : 0, transform: inView ? "none" : "translateY(40px)", transition: "all 0.75s ease" }}>
           <div>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,212,255,0.06)", border: "1px solid rgba(0,212,255,0.15)", padding: "5px 14px", borderRadius: 100, fontSize: "0.72rem", fontWeight: 600, color: "#00d4ff", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>Keahlian</div>
@@ -437,7 +509,7 @@ function Skills() {
             </h2>
           </div>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.5rem" }}>
+        <div className="skills-grid">
           {SKILLS.map((sk, i) => (
             <SkillCard key={sk.title} sk={sk} i={i} hov={hov} setHov={setHov} />
           ))}
@@ -471,12 +543,12 @@ function Experience() {
   const [selectedCert, setSelectedCert] = useState(null);
 
   return (
-    <section id="experience" style={{ padding: "7rem 6rem", background: "#04040a", position: "relative", zIndex: 1 }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+    <section id="experience" className="section">
+      <div className="container">
 
         {/* Header */}
         <div ref={ref} style={{ opacity: inView ? 1 : 0, transform: inView ? "none" : "translateY(40px)", transition: "all 0.75s ease" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,212,255,0.06)", border: "1px solid rgba(0,212,255,0.15)", padding: "5px 14px", borderRadius: 100, fontSize: "0.72rem", fontWeight: 600, color: "#00d4ff", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>Experience</div>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,212,255,0.06)", border: "1px solid rgba(0,212,255,0.15)", padding: "5px 14px", borderRadius: 100, fontSize: "0.72rem", fontWeight: 600, color: "#00d4ff", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>Pengalaman</div>
           <h2 style={{ fontSize: "clamp(2.25rem,4vw,3.5rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
             Pengalaman{" "}
             <span style={{ background: "linear-gradient(135deg,#00d4ff,#7c3aed)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Organisasi & Kepanitiaan </span>
@@ -500,10 +572,10 @@ function Experience() {
         {/* Certifications */}
         <div style={{ marginTop: "4rem" }}>
           <h3 style={{ color: "#00d4ff", fontSize: "1rem", marginBottom: "1.5rem", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-            Certifications
+            Sertifikasi
           </h3>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem" }}>
+          <div className="certs-grid">
             {ACHIEVEMENTS.map((item, i) => (
               <div key={i} style={{
                 background: "rgba(0,212,255,0.03)",
@@ -584,14 +656,16 @@ function Experience() {
                 <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem", marginBottom: 4 }}>{item.title}</div>
                 <div style={{ fontSize: "0.75rem", color: "#64748b", marginBottom: "0.75rem" }}>{item.org} · {item.year}</div>
 
+                {item.certificate && !item.certificate.startsWith("LINK_") && (
                 <a
                   href={item.certificate}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ fontSize: "0.75rem", color: "#00d4ff", textDecoration: "none", fontWeight: 600 }}
                 >
-                  View Certificate →
+                  Lihat Sertifikat →
                 </a>
+                )}
               </div>
             ))}
           </div>
@@ -648,6 +722,7 @@ function Experience() {
             />
 
             {/* Action button */}
+            {selectedCert.certificate && !selectedCert.certificate.startsWith("LINK_") && (
             <a
               href={selectedCert.certificate}
               target="_blank"
@@ -667,6 +742,7 @@ function Experience() {
             >
               Lihat Sertifikat Asli →
             </a>
+            )}
           </div>
         </div>
       )}
@@ -758,7 +834,7 @@ function ProjectCard({ p }) {
         </div>
 
         {/* LINK INDICATOR */}
-        {p.link && (
+        {p.link && !p.link.includes("...") && (
           <span style={{
             position: "absolute",
             bottom: 12,
@@ -790,7 +866,7 @@ function ProjectCard({ p }) {
   );
 
   // ✅ CONDITIONAL DI LUAR JSX
-  if (p.link) {
+  if (p.link && !p.link.includes("...")) {
     return (
       <a
         href={p.link}
@@ -812,14 +888,9 @@ function Portfolio() {
   return (
     <section
       id="portfolio"
-      style={{
-        padding: "7rem 6rem",
-        background: "#070710",
-        position: "relative",
-        zIndex: 1,
-      }}
+      className="section section-alt"
     >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <div className="container">
         
         {/* HEADER */}
         <div
@@ -868,13 +939,7 @@ function Portfolio() {
         </div>
 
         {/* GRID PROJECT */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3,1fr)",
-            gap: "1.5rem",
-          }}
-        >
+        <div className="portfolio-grid">
           {PROJECTS.map((p, i) => (
             <ProjectCard key={i} p={p} />
           ))}
@@ -893,17 +958,17 @@ function Contact() {
 
   const links = [
     { icon: "📧", type: "Email", val: ME.email, href: `mailto:${ME.email}`, cls: "rgba(124,58,237,0.2)" },
-    { icon: "💻", type: "GitHub", val: "github.com/npafifah", href: ME.github, cls: "rgba(255,255,255,0.07)" },
+    { icon: "💻", type: "GitHub", val: "github.com/nafifah", href: ME.github, cls: "rgba(255,255,255,0.07)" },
     { icon: "💼", type: "LinkedIn", val: "linkedin.com/in/nurputriafifah", href: ME.linkedin, cls: "rgba(59,130,246,0.2)" },
     { icon: "📸", type: "Instagram", val: "@fifhptrii", href: ME.instagram, cls: "rgba(236,72,153,0.2)" },
   ];
 
   return (
-    <section id="contact" style={{ padding: "7rem 6rem", background: "#04040a", position: "relative", zIndex: 1 }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div ref={ref} style={{ background: "linear-gradient(135deg,rgba(124,58,237,0.1),rgba(0,212,255,0.05))", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 28, padding: "4rem", position: "relative", overflow: "hidden", opacity: inView ? 1 : 0, transform: inView ? "none" : "translateY(40px)", transition: "all 0.75s ease" }}>
+    <section id="contact" className="section">
+      <div className="container">
+        <div ref={ref} className="contact-card" style={{ opacity: inView ? 1 : 0, transform: inView ? "none" : "translateY(40px)", transition: "all 0.75s ease" }}>
           <div style={{ position: "absolute", top: -100, right: -100, width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(124,58,237,0.15),transparent 70%)", pointerEvents: "none" }} />
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start", position: "relative" }}>
+          <div className="contact-layout" style={{ position: "relative" }}>
             <div>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,212,255,0.06)", border: "1px solid rgba(0,212,255,0.15)", padding: "5px 14px", borderRadius: 100, fontSize: "0.72rem", fontWeight: 600, color: "#00d4ff", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>Kontak</div>
               <h2 style={{ fontSize: "clamp(2.25rem,4vw,3.5rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "1rem" }}>
@@ -934,7 +999,7 @@ function Contact() {
                 </div>
               ) : (
                 <>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
+                  <div className="form-row" style={{ marginBottom: "1.25rem" }}>
                     {[["name", "Nama", "text", "Nama kamu"], ["email", "Email", "email", "email@contoh.com"]].map(([k, l, t, ph]) => (
                       <div key={k}>
                         <label style={{ display: "block", fontSize: "0.72rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "#64748b", marginBottom: "0.5rem" }}>{l}</label>
@@ -997,6 +1062,164 @@ export default function App() {
         @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
         input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.18); }
         input, textarea { color: #fff !important; }
+
+        .custom-cursor-dot {
+          position: fixed; width: 8px; height: 8px; background: #00d4ff; border-radius: 50%;
+          pointer-events: none; z-index: 9999; transform: translate(-50%,-50%);
+          transition: transform 0.1s, background 0.3s;
+          box-shadow: 0 0 10px #00d4ff, 0 0 20px rgba(0,212,255,0.5);
+        }
+        .custom-cursor-ring {
+          position: fixed; width: 40px; height: 40px; border: 1px solid rgba(0,212,255,0.3);
+          border-radius: 50%; pointer-events: none; z-index: 9998;
+          transform: translate(-50%,-50%); transition: width 0.3s, height 0.3s, border-color 0.3s;
+        }
+
+        .site-nav {
+          position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 500;
+          display: flex; align-items: center; gap: 2rem;
+          background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+          backdrop-filter: blur(20px); padding: 0.75rem 2rem; border-radius: 100px;
+          max-width: calc(100% - 2rem);
+        }
+        .site-nav-logo {
+          font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700;
+          color: #fff; text-decoration: none; letter-spacing: 0.05em; flex-shrink: 0;
+        }
+        .site-nav-links { display: flex; gap: 1.75rem; }
+        .site-nav-links a {
+          font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.5);
+          text-decoration: none; transition: color 0.2s; white-space: nowrap;
+        }
+        .site-nav-links a.active, .site-nav-links a:hover { color: #fff; }
+        .site-nav-cta {
+          background: linear-gradient(135deg,#7c3aed,#00d4ff); padding: 0.5rem 1.25rem;
+          border-radius: 100px; font-size: 0.8rem; font-weight: 600; color: #fff;
+          text-decoration: none; white-space: nowrap; flex-shrink: 0;
+        }
+        .site-nav-toggle {
+          display: none; align-items: center; justify-content: center;
+          width: 36px; height: 36px; border-radius: 10px;
+          border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06);
+          color: #fff; font-size: 1.1rem; cursor: pointer; flex-shrink: 0;
+        }
+        .site-nav-overlay {
+          position: fixed; inset: 0; z-index: 498; background: rgba(0,0,0,0.5);
+        }
+        .site-nav-mobile {
+          position: fixed; top: 4.75rem; left: 0.75rem; right: 0.75rem; z-index: 499;
+          background: rgba(7,7,16,0.97); border: 1px solid rgba(255,255,255,0.1);
+          backdrop-filter: blur(20px); border-radius: 16px; padding: 0.75rem;
+          display: none; flex-direction: column; gap: 0.25rem;
+          transform: translateY(-8px); opacity: 0; pointer-events: none;
+          transition: opacity 0.2s, transform 0.2s;
+        }
+        .site-nav-mobile.open {
+          display: flex; opacity: 1; transform: none; pointer-events: auto;
+        }
+        .site-nav-mobile a {
+          padding: 0.85rem 1rem; border-radius: 10px; color: rgba(255,255,255,0.65);
+          text-decoration: none; font-size: 0.9rem; font-weight: 500;
+        }
+        .site-nav-mobile a.active {
+          color: #fff; background: rgba(0,212,255,0.08);
+        }
+        .site-nav-mobile-cta {
+          margin-top: 0.5rem; text-align: center;
+          background: linear-gradient(135deg,#7c3aed,#00d4ff);
+          padding: 0.85rem 1rem; border-radius: 10px;
+          font-size: 0.9rem; font-weight: 600; color: #fff; text-decoration: none;
+        }
+
+        .hero-section {
+          min-height: 100vh; display: flex; flex-direction: column;
+          align-items: center; justify-content: center; text-align: center;
+          padding: 7rem 1.5rem 4rem; position: relative; z-index: 1; overflow: hidden;
+        }
+        .hero-typed {
+          font-size: clamp(0.95rem, 2vw, 1.3rem);
+          font-family: 'Space Grotesk', monospace;
+          color: rgba(226,232,240,0.7);
+          min-height: 36px; margin-bottom: 0.5rem;
+          max-width: min(100%, 560px); padding: 0 0.5rem;
+          word-break: break-word;
+        }
+
+        .section { padding: 7rem 6rem; position: relative; z-index: 1; }
+        .section-alt { background: #070710; }
+        #skills, #experience, #contact { background: #04040a; }
+        .container { max-width: 1200px; margin: 0 auto; width: 100%; }
+
+        .about-grid {
+          display: grid; grid-template-columns: 1fr 1.5fr;
+          gap: 5rem; align-items: center;
+        }
+        .skills-grid {
+          display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+        }
+        .portfolio-grid {
+          display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+        }
+        .certs-grid {
+          display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+        }
+        .contact-card {
+          background: linear-gradient(135deg,rgba(124,58,237,0.1),rgba(0,212,255,0.05));
+          border: 1px solid rgba(255,255,255,0.08); border-radius: 28px;
+          padding: 4rem; position: relative; overflow: hidden;
+        }
+        .contact-layout {
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: 4rem; align-items: start;
+        }
+        .form-row {
+          display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+        }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        .portfolio-grid > *, .skills-grid > *, .certs-grid > * { min-width: 0; }
+
+        .site-footer {
+          background: #070710; border-top: 1px solid rgba(255,255,255,0.06);
+          padding: 2rem 6rem; display: flex;
+          justify-content: space-between; align-items: center; gap: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+          .section { padding: 6rem 2.5rem; }
+          .about-grid { gap: 3rem; }
+          .skills-grid { grid-template-columns: repeat(2, 1fr); }
+          .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+          .contact-layout { gap: 2.5rem; }
+          .contact-card { padding: 2.5rem; }
+          .site-footer { padding: 2rem 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+          body { cursor: auto; }
+          .custom-cursor-dot, .custom-cursor-ring { display: none; }
+
+          .site-nav {
+            top: 0.75rem; left: 0.75rem; right: 0.75rem; transform: none;
+            width: auto; max-width: none; border-radius: 16px;
+            padding: 0.65rem 1rem; gap: 0.75rem; justify-content: space-between;
+          }
+          .site-nav-links, .site-nav-cta { display: none; }
+          .site-nav-toggle { display: flex; }
+
+          .hero-section { padding: 6.5rem 1.25rem 3rem; }
+          .section { padding: 5rem 1.25rem; }
+          .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+          .about-float-badge { display: none; }
+          .skills-grid, .portfolio-grid, .certs-grid { grid-template-columns: 1fr; }
+          .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+          .contact-card { padding: 1.5rem; border-radius: 20px; }
+          .form-row, .info-grid { grid-template-columns: 1fr; }
+          .site-footer {
+            padding: 1.5rem 1.25rem; flex-direction: column;
+            text-align: center;
+          }
+        }
       `}</style>
 
       {/* BG orbs */}
@@ -1013,7 +1236,7 @@ export default function App() {
       <Portfolio />
       <Contact />
 
-      <footer style={{ background: "#070710", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "2rem 6rem", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <footer className="site-footer">
         <span style={{ fontSize: "0.78rem", color: "#64748b", fontFamily: "'Space Grotesk',sans-serif" }}>© 2026 Nur Putri Afifah</span>
         <span style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: "1rem", fontWeight: 700, color: "#00d4ff" }}>NPA.</span>
       </footer>
